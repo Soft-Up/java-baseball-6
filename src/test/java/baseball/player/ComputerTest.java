@@ -13,7 +13,7 @@ class ComputerTest {
 
     private static Computer computer;
 
-    static class FakeNumberGenerator implements NumberGenerator {
+    private static class FakeNumberGenerator implements NumberGenerator {
         @Override
         public List<Integer> generateUniqueThreeDigitNumber() {
             return List.of(1, 2, 3);
