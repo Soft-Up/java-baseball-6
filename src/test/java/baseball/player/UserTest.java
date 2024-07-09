@@ -1,11 +1,11 @@
 package baseball.player;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import baseball.util.NumberGenerator;
 import baseball.util.NumberValidator;
 import java.util.List;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,9 +43,8 @@ class UserTest {
         user = new User(new FakeNumberGenerator());
     }
 
-    @ParameterizedTest
+    @Test
     @DisplayName("유저가 올바른 숫자를 입력하는 경우")
-    @ValueSource(strings = {"123", "456", "185", "843"})
     void enterUniqueThreeDigitNumberTestSuccess() {
         // Given
         String input = "123";
