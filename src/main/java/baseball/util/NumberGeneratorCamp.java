@@ -7,6 +7,7 @@ import java.util.List;
 
 public class NumberGeneratorCamp implements NumberGenerator {
 
+    @Override
     public List<Integer> generateUniqueThreeDigitNumber() {
         List<Integer> uniqueThreeDigitNumber = new ArrayList<>();
         while (uniqueThreeDigitNumber.size() < 3) {
