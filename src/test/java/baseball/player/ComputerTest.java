@@ -18,6 +18,11 @@ class ComputerTest {
         public List<Integer> generateUniqueThreeDigitNumber() {
             return List.of(1, 2, 3);
         }
+
+        @Override
+        public List<Integer> enterUniqueThreeDigitNumber() {
+            return null;
+        }
     }
 
     @BeforeAll

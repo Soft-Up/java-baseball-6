@@ -1,5 +1,6 @@
 package baseball.util;
 
+import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,5 +16,19 @@ public class NumberGeneratorCamp implements NumberGenerator {
             }
         }
         return uniqueThreeDigitNumber;
+    }
+
+    @Override
+    public List<Integer> enterUniqueThreeDigitNumber() {
+        System.out.print("숫자를 입력해주세요 : ");
+        String input = Console.readLine();
+        NumberValidator.isValidNumberInput(input);
+        return integerStringToIntegerList(input);
+    }
+
+    private List<Integer> integerStringToIntegerList(String input) {
+        return input.chars()
+                .mapToObj(Character::getNumericValue)
+                .toList();
     }
 }
