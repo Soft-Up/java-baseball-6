@@ -17,7 +17,6 @@ public class Computer {
             }
         }
         this.answerNumbers = computer;
-//        System.out.println(answerNumbers);
     }
 
     public Answer calculate(BaseballNumber baseballNumber){
