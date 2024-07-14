@@ -5,13 +5,13 @@ import java.util.stream.IntStream;
 
 public class Answer {
     private AnswerStatus status = AnswerStatus.WRONG;
-    private Long strike;
-    private Long ball;
+    private final Long strike;
+    private final Long ball;
 
     public Answer(List<Integer> answerNumbers, List<Integer> playerNumbers) {
         strike = countStrike(answerNumbers, playerNumbers);
         ball = countContain(answerNumbers, playerNumbers) - strike;
-        if (Long.valueOf(BaseballNumber.LENGTH).equals(strike)) {
+        if (Long.valueOf(BaseballNumber.BASEBALL_LENGTH).equals(strike)) {
             this.status = AnswerStatus.RIGHT;
         }
     }
@@ -21,7 +21,7 @@ public class Answer {
     }
 
     private Long countStrike(List<Integer> answerNumbers, List<Integer> playerNumbers) {
-        return IntStream.range(0, BaseballNumber.LENGTH)
+        return IntStream.range(0, BaseballNumber.BASEBALL_LENGTH)
                 .filter(i -> answerNumbers.get(i).equals(playerNumbers.get(i)))
                 .count();
     }

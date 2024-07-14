@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class BaseballNumber {
-    public static final Integer LENGTH = 3;
-    private final String REGEXP_PATTERN_INTEGER = String.format("[1-9]{%d}", LENGTH);
-    private List<Integer> numbers;
+    public static final Integer BASEBALL_LENGTH = 3;
+    private final String REGEXP_PATTERN_INTEGER = String.format("[1-9]{%d}", BASEBALL_LENGTH);
+    private final List<Integer> numbers;
 
     public BaseballNumber(String input) {
         validate(input);
@@ -24,7 +24,7 @@ public class BaseballNumber {
     }
 
     private void isCorrectLength(String input) {
-        if (input.length() != LENGTH) {
+        if (input.length() != BASEBALL_LENGTH) {
             throw new IllegalArgumentException("입력의 길이가 알맞지 않습니다.");
         }
     }
@@ -36,7 +36,7 @@ public class BaseballNumber {
     }
 
     private void isDuplicate(String input) {
-        if (Stream.of(input.split("")).collect(Collectors.toSet()).size() < LENGTH) {
+        if (Stream.of(input.split("")).collect(Collectors.toSet()).size() < BASEBALL_LENGTH) {
             throw new IllegalArgumentException("입력 중 중복이 있습니다.");
         }
     }

@@ -3,9 +3,9 @@ package baseball.domain;
 import java.util.regex.Pattern;
 
 public class EndNumber {
-    public static final Integer LENGTH = 1;
-    private final String REGEXP_PATTERN_FORMAT = String.format("[1-2]{%d}",LENGTH);
-    private Integer number;
+    public static final Integer END_LENGTH = 1;
+    private final String REGEXP_PATTERN_FORMAT = String.format("[1-2]{%d}", END_LENGTH);
+    private final Integer number;
 
     public EndNumber(String input){
         validate(input);
@@ -18,7 +18,7 @@ public class EndNumber {
     }
 
     private void isCorrectLength(String input){
-        if (input.length() != LENGTH) {
+        if (input.length() != END_LENGTH) {
             throw new IllegalArgumentException("입력의 길이가 알맞지 않습니다.");
         }
     }
