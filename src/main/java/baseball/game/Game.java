@@ -9,21 +9,21 @@ import baseball.view.View;
 public class Game {
     private Computer computer;
 
-    public Game(){
+    public Game() {
         this.computer = new Computer();
     }
 
-    public void start(){
+    public void start() {
         View.init();
         Answer answer;
         do {
             BaseballNumber baseballNumber = new BaseballNumber(View.input());
             answer = computer.calculate(baseballNumber);
             View.showAnswer(answer.getString());
-        }while(answer.isStatusWRONG());
+        } while (answer.isStatusWRONG());
     }
 
-    public boolean end(){
+    public boolean end() {
         EndNumber endNumber = new EndNumber(View.showEnd());
         return endNumber.isEnd();
     }

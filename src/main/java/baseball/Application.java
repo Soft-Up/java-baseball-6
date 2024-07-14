@@ -10,6 +10,6 @@ public class Application {
             Game game = new Game();
             game.start();
             end = game.end();
-        }while(!end);
+        } while (!end);
     }
 }
