@@ -9,14 +9,18 @@ public class Computer {
     private List<Integer> answerNumbers;
 
     public Computer(){
-        List<Integer> computer = new ArrayList<>();
-        while (computer.size() < BaseballNumber.LENGTH) {
+        this.answerNumbers = makeRandomNumbers();
+    }
+
+    private List<Integer> makeRandomNumbers(){
+        List<Integer> numbers = new ArrayList<>();
+        while (numbers.size() < BaseballNumber.BASEBALL_LENGTH) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
-            if (!computer.contains(randomNumber)) {
-                computer.add(randomNumber);
+            if (!numbers.contains(randomNumber)) {
+                numbers.add(randomNumber);
             }
         }
-        this.answerNumbers = computer;
+        return numbers;
     }
 
     public Answer calculate(BaseballNumber baseballNumber){
