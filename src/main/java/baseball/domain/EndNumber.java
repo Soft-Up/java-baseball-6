@@ -19,13 +19,13 @@ public class EndNumber {
 
     private void isCorrectLength(String input){
         if (input.length() != LENGTH) {
-            throw new IllegalArgumentException("입력  길이가 알맞지 않습니다.");
+            throw new IllegalArgumentException("입력의 길이가 알맞지 않습니다.");
         }
     }
 
     private void isCorrectNumber(String input){
         if (!Pattern.matches(REGEXP_PATTERN_FORMAT, input)) {
-            throw new IllegalArgumentException("입력이 주어진 숫자가 아닙니다.");
+            throw new IllegalArgumentException("입력값이 형식을 만족하지 않습니다.");
         }
     }
 
