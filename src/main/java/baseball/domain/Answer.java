@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class Answer {
+    private enum AnswerStatus {RIGHT, WRONG};
+
     private AnswerStatus status = AnswerStatus.WRONG;
     private final Long strike;
     private final Long ball;
