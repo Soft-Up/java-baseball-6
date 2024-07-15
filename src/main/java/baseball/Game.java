@@ -26,7 +26,6 @@ public class Game {
         player.inputGame();
     }
 
-    // java에선 multiple return이 안 돼서 map으로 꼼수,,
     private HashMap<String, Object> evaluateInput() {
         long contains = player.getGameInput().stream().filter(computer::contains).count();
         long strikes = player.getGameInput().stream().filter((number) ->
