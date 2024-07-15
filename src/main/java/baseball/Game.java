@@ -28,10 +28,11 @@ public class Game {
 
     // java에선 multiple return이 안 돼서 map으로 꼼수,,
     private HashMap<String, Object> evaluateInput() {
-        long balls = player.getGameInput().stream().filter(computer::contains).count();
+        long contains = player.getGameInput().stream().filter(computer::contains).count();
         long strikes = player.getGameInput().stream().filter((number) ->
             player.getGameInput().indexOf(number) == computer.indexOf(number)
         ).count();
+        long balls = contains - strikes;
 
         HashMap<String, Object> map = new HashMap<>();
         map.put("strikes", strikes);
