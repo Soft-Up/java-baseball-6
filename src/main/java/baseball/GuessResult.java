@@ -1,8 +1,8 @@
 package baseball;
 
-public enum GuessResult {
-    NOTHING,
-    BALL,
-    STRIKE,
-    CORRECT
+public record GuessResult(
+	long strikes,
+	long balls,
+	Guess guess
+) {
 }

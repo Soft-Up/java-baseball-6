@@ -1,39 +1,39 @@
 package baseball;
 
 public class GameManager {
-    private final Player player;
-    private boolean willProceed;
+	private final Player player;
+	private boolean willProceed;
 
-    public GameManager(Player player) {
-        this.player = player;
-        this.willProceed = true;
-        System.out.println("숫자 야구 게임을 시작합니다.");
-    }
+	public GameManager(Player player) {
+		this.player = player;
+		this.willProceed = true;
+		System.out.println("숫자 야구 게임을 시작합니다.");
+	}
 
-    public boolean willProceed() {
-        return willProceed;
-    }
+	public boolean willProceed() {
+		return willProceed;
+	}
 
-    public void promptInput() {
-        if (player.getGameManagerInput().equals("first")) {
-            player.setGameManagerInput("1");
-            return;
-        }
+	public void promptInput() {
+		if (player.getGameManagerInput().equals("first")) {
+			player.setGameManagerInput("1");
+			return;
+		}
 
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-        player.inputGameManager();
-    }
+		System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+		player.inputGameManager();
+	}
 
-    public void startGame() {
-        Game game = new Game(player);
+	public void startGame() {
+		Game game = new Game(player);
 
-        GameState gameState = GameState.PROCEEDING;
-        while (gameState == GameState.PROCEEDING) {
-            gameState = game.proceed();
-        }
-    }
+		GameState gameState = GameState.PROCEEDING;
+		while (gameState == GameState.PROCEEDING) {
+			gameState = game.proceed();
+		}
+	}
 
-    public void stopGame() {
-        willProceed = false;
-    }
+	public void stopGame() {
+		willProceed = false;
+	}
 }
