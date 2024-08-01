@@ -3,7 +3,9 @@ package baseball;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Game {
 	private final Player player;
@@ -11,13 +13,15 @@ public class Game {
 
 	public Game(Player player) {
 		this.player = player;
-		this.computer = new ArrayList<>();
-		while (computer.size() < 3) {
-			int randomNumber = Randoms.pickNumberInRange(1, 9);
-			if (!computer.contains(randomNumber)) {
-				computer.add(randomNumber);
-			}
+		this.computer = generateRandomNumbers();
+	}
+
+	private List<Integer> generateRandomNumbers() {
+		Set<Integer> randomNumbers = new LinkedHashSet<>();
+		while (randomNumbers.size() < 3) {
+			randomNumbers.add(Randoms.pickNumberInRange(1, 9));
 		}
+		return new ArrayList<>(randomNumbers);
 	}
 
 	private void promptInput() {
