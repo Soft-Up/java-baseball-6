@@ -10,11 +10,17 @@ public class GameManager {
 		System.out.println("숫자 야구 게임을 시작합니다.");
 	}
 
-	public boolean willProceed() {
-		return willProceed;
+	public void start() {
+		while (willProceed) {
+			promptInput();
+			switch (player.getGameManagerInput()) {
+				case "1" -> startGame();
+				case "2" -> stopGame();
+			}
+		}
 	}
 
-	public void promptInput() {
+	private void promptInput() {
 		if (player.getGameManagerInput().equals("first")) {
 			player.setGameManagerInput("1");
 			return;
